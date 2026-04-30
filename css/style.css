@@ -21,7 +21,7 @@
 
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{font-family:var(--body);color:var(--text);background:var(--bg);overflow-x:hidden;cursor:none;position:relative;}
+body{font-family:var(--body);color:var(--text);background-color:var(--bg);background-image:radial-gradient(rgba(8,145,178,0.15) 1.5px, transparent 1.5px);background-size:36px 36px;overflow-x:hidden;cursor:none;position:relative;}
 body::before, body::after{content:'';position:fixed;border-radius:50%;filter:blur(120px);pointer-events:none;z-index:-2;}
 body::before{width:60vw;height:60vw;background:rgba(8,145,178,0.06);top:-10vh;left:-10vw;animation:siteOrbFloat 22s ease-in-out infinite;}
 body::after{width:50vw;height:50vw;background:rgba(37,99,235,0.06);bottom:-10vh;right:-10vw;animation:siteOrbFloat 26s ease-in-out infinite reverse;}
@@ -160,7 +160,7 @@ h1,h2,h3,h4{font-family:var(--heading);line-height:1.2;}
 .about-checklist i{color:var(--teal);font-size:1.1rem;margin-top:2px;flex-shrink:0;}
 
 /* SERVICES */
-.services.bg-tint{background:radial-gradient(circle at top right, rgba(207,250,254,0.5), transparent 50%), var(--bg);}
+.services.bg-tint{background:radial-gradient(circle at top right, rgba(207,250,254,0.5), transparent 50%);}
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
 .service-card{background:rgba(255, 255, 255, 0.65);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:var(--trans);border:1px solid rgba(255, 255, 255, 0.9);display:flex;flex-direction:column;}
 .service-card:hover{transform:translateY(-12px) scale(1.02);box-shadow:0 20px 40px rgba(8,145,178,.15);border-color:rgba(255,255,255,1);}
@@ -194,7 +194,7 @@ h1,h2,h3,h4{font-family:var(--heading);line-height:1.2;}
 .gallery-item:hover .gallery-caption{opacity:1;transform:translateY(0);}
 
 /* TESTIMONIALS */
-.testimonials.bg-tint{background:radial-gradient(circle at bottom left, rgba(219,234,254,0.5), transparent 50%), var(--bg);}
+.testimonials.bg-tint{background:radial-gradient(circle at bottom left, rgba(219,234,254,0.5), transparent 50%);}
 .testimonials-track{gap:28px;}
 .testimonial-card{background:rgba(255, 255, 255, 0.65);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-radius:var(--radius);padding:32px;box-shadow:var(--shadow);border:1px solid rgba(255, 255, 255, 0.9);transition:var(--trans);width:450px;flex-shrink:0;display:flex;flex-direction:column;}
 .testimonial-card:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 15px 35px rgba(0,0,0,.1);}
