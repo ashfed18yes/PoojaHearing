@@ -5,10 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pooja Speech & Hearing Clinic | Best Audiologist in Jaipur</title>
     <meta name="description" content="Pooja Speech and Hearing Clinic in Jaipur. Dr. Navin Kumar provides expert speech therapy, hearing care, and child therapy. Book your consultation today.">
+    <meta name="keywords" content="Audiologist, Speech Therapy, Hearing Care, Jaipur, Dr. Navin Kumar, Hearing Aids">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Pooja Speech & Hearing Clinic | Best Audiologist in Jaipur">
+    <meta property="og:description" content="Expert speech therapy and hearing care in Jaipur. Book your consultation with Dr. Navin Kumar today.">
+    <meta property="og:type" content="website">
+    
+    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- Async font loading -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Sora:wght@400;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Sora:wght@400;600;700;800&display=swap" media="print" onload="this.media='all'">
+    
+    <!-- Async FontAwesome -->
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'">
+    
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -330,19 +344,39 @@
         </div>
     </section>
 
-    <!-- ===== CTA BANNER ===== -->
+    <!-- ===== CTA BANNER & FORM ===== -->
     <section class="cta-banner">
         <div class="cta-orb cta-orb-1"></div>
         <div class="cta-orb cta-orb-2"></div>
         <div class="container cta-inner" data-reveal="up">
-            <div class="cta-icon"><i class="fa-solid fa-phone-volume"></i></div>
-            <div class="cta-text">
-                <h2>Ready to Improve Your Hearing &amp; Communication?</h2>
-                <p>Book a consultation with Dr. Navin Kumar today — take the first step toward a better life.</p>
+            <div class="cta-text-wrapper">
+                <div class="cta-icon"><i class="fa-solid fa-phone-volume"></i></div>
+                <div class="cta-text">
+                    <h2>Ready to Improve Your Hearing &amp; Communication?</h2>
+                    <p>Book a consultation with Dr. Navin Kumar today — take the first step toward a better life.</p>
+                </div>
+                <div class="cta-actions" style="margin-top: 20px;">
+                    <a href="tel:08562810441" class="btn btn-white"><i class="fa-solid fa-phone"></i> 08562810441</a>
+                    <a href="https://wa.me/918562810441" class="btn btn-outline-white" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                </div>
             </div>
-            <div class="cta-actions">
-                <a href="tel:08562810441" class="btn btn-white"><i class="fa-solid fa-phone"></i> 08562810441</a>
-                <a href="https://wa.me/918562810441" class="btn btn-outline-white" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+            
+            <div class="cta-form-wrapper">
+                <form id="contactForm" class="contact-form" novalidate>
+                    <h3>Request a Call Back</h3>
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required pattern="^[a-zA-Z\s]{3,50}$" placeholder="John Doe">
+                        <span class="error-msg">Please enter a valid name (letters only).</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required pattern="^[0-9]{10}$" placeholder="10-digit mobile number">
+                        <span class="error-msg">Please enter a valid 10-digit phone number.</span>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Submit Request</button>
+                    <p id="formStatus" class="form-status"></p>
+                </form>
             </div>
         </div>
     </section>

@@ -145,4 +145,43 @@ document.addEventListener('DOMContentLoaded', () => {
   const statsEl = document.querySelector('.hero-stats');
   if (statsEl) statsObs.observe(statsEl);
 
+  // ── FORM VALIDATION & SUBMISSION ─────────────────────────
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const status = document.getElementById('formStatus');
+      
+      // Basic validation
+      const nameValid = /^[a-zA-Z\s]{3,50}$/.test(name);
+      const phoneValid = /^[0-9]{10}$/.test(phone);
+      
+      if (nameValid && phoneValid) {
+        // Simulate API call
+        const btn = contactForm.querySelector('button[type="submit"]');
+        const origText = btn.textContent;
+        btn.textContent = 'Sending...';
+        btn.disabled = true;
+        
+        setTimeout(() => {
+          status.textContent = 'Thank you! We will call you back shortly.';
+          status.className = 'form-status success';
+          contactForm.reset();
+          btn.textContent = origText;
+          btn.disabled = false;
+          
+          setTimeout(() => {
+            status.style.display = 'none';
+          }, 5000);
+        }, 1500);
+      } else {
+        status.textContent = 'Please fix the errors in the form.';
+        status.className = 'form-status error';
+      }
+    });
+  }
+
 });
