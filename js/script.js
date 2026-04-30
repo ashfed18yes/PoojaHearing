@@ -62,6 +62,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { rootMargin: '-40% 0px -55% 0px' });
   sections.forEach(s => observer.observe(s));
 
+  // ── INFINITE MARQUEE ───────────────────────────────────────
+  const marquees = document.querySelectorAll('.marquee-track');
+  marquees.forEach(track => {
+    // Duplicate the content to create a seamless infinite scroll loop
+    const content = track.innerHTML;
+    track.innerHTML = content + content;
+  });
+
   // ── SCROLL REVEAL ──────────────────────────────────────────
   const reveals = document.querySelectorAll('[data-reveal]');
   const revealObs = new IntersectionObserver((entries) => {
@@ -75,14 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   reveals.forEach(el => revealObs.observe(el));
-
-  // ── INFINITE MARQUEE ───────────────────────────────────────
-  const marquees = document.querySelectorAll('.marquee-track');
-  marquees.forEach(track => {
-    // Duplicate the content to create a seamless infinite scroll loop
-    const content = track.innerHTML;
-    track.innerHTML = content + content;
-  });
 
   // ── CUSTOM CURSOR ──────────────────────────────────────────
   const dot = document.getElementById('cursor-dot');
