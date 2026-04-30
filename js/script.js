@@ -76,6 +76,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   reveals.forEach(el => revealObs.observe(el));
 
+  // ── INFINITE MARQUEE ───────────────────────────────────────
+  const marquees = document.querySelectorAll('.marquee-track');
+  marquees.forEach(track => {
+    // Duplicate the content to create a seamless infinite scroll loop
+    const content = track.innerHTML;
+    track.innerHTML = content + content;
+  });
+
   // ── CUSTOM CURSOR ──────────────────────────────────────────
   const dot = document.getElementById('cursor-dot');
   const ring = document.getElementById('cursor-ring');
@@ -92,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
       requestAnimationFrame(animRing);
     };
     animRing();
-    document.querySelectorAll('a, button, .service-card, .gallery-item').forEach(el => {
+    document.querySelectorAll('a, button, .service-card, .gallery-item, .testimonial-card').forEach(el => {
       el.addEventListener('mouseenter', () => { dot.classList.add('hovered'); ring.classList.add('hovered'); });
       el.addEventListener('mouseleave', () => { dot.classList.remove('hovered'); ring.classList.remove('hovered'); });
     });
